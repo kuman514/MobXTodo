@@ -1,29 +1,32 @@
+import { FC } from 'react';
+import styled from 'styled-components';
+import { observer } from 'mobx-react';
+
 import TodoCreate from 'components/molecules/TodoCreate';
 import TodoList from 'components/organisms/TodoList';
-import './App.css';
+import todoStore from 'store/todoStore';
 
-function App() {
+const AppDiv = styled.div`
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+`;
+
+const App: FC<{}> = () => {
+  const todoList = todoStore.todos;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <TodoList
-          todos={[
-            { todoId: 0, todoContent: 'Lorem ipsum' },
-            { todoId: 1, todoContent: 'Dolor sit amet' },
-            { todoId: 2, todoContent: 'Consectetur adipiscing elit' },
-            { todoId: 3, todoContent: 'Quisque at mi vel' },
-            { todoId: 4, todoContent: 'Nisl pellentesque placerat' },
-            { todoId: 5, todoContent: 'Cras eu sagittis erat' },
-            { todoId: 6, todoContent: 'Duis et elit' },
-            { todoId: 7, todoContent: 'Rutrum mollis' },
-            { todoId: 8, todoContent: 'Lorem at rhoncus lacus' },
-            { todoId: 9, todoContent: 'Maecenas ornare gravida imperdiet' },
-          ]}
-        />
-        <TodoCreate />
-      </header>
-    </div>
+    <AppDiv>
+      <TodoList todos={todoList} />
+      <TodoCreate />
+    </AppDiv>
   );
-}
+};
 
-export default App;
+export default observer(App);
