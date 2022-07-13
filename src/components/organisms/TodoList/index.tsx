@@ -14,7 +14,7 @@ interface TodoListProps {
 
 const TodoList: FC<TodoListProps> = ({ todos }) => {
   const todoList = todos.map(({ todoContent, todoId }) => (
-    <TodoItem key={todoId} todoId={todoId}>
+    <TodoItem key={todoId} todoId={todoId} todoContent={todoContent}>
       { todoContent }
     </TodoItem>
   ));
