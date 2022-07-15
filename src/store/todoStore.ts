@@ -28,7 +28,13 @@ const todoStore = observable<TodoStore>({
   },
   createTodo(newTodo) {
     const newTodos = Array.from(this.todos);
-    const newTodoId = newTodos[newTodos.length - 1].todoId + 1;
+    const newTodoId = (() => {
+      if (newTodos.length > 0) {
+        return newTodos[newTodos.length - 1].todoId + 1;
+      } else {
+        return 0;
+      }
+    })();
     newTodos.push({
       todoId: newTodoId,
       todoContent: newTodo,
