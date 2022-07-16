@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/MobXTodo/static/css/main.e6c13ad2.css",
+    "main.js": "/MobXTodo/static/js/main.4354ba0f.js",
+    "static/js/787.e0377768.chunk.js": "/MobXTodo/static/js/787.e0377768.chunk.js",
+    "index.html": "/MobXTodo/index.html",
+    "main.e6c13ad2.css.map": "/MobXTodo/static/css/main.e6c13ad2.css.map",
+    "main.4354ba0f.js.map": "/MobXTodo/static/js/main.4354ba0f.js.map",
+    "787.e0377768.chunk.js.map": "/MobXTodo/static/js/787.e0377768.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.4354ba0f.js"
+  ]
+}
